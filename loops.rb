@@ -15,10 +15,16 @@ provinces = {
 
 
 # 1. display each province, followed by its abbreviation, each on its own line
-
+provinces.each do |name, code|
+	puts "#{code}: #{name}"
+end
 
 # 2. using the .each method, display the months in the second quarter of the year, in a single row
+second_quarter = months[3..5]
 
+second_quarter.each do |month|
+	puts month
+end
 
 # 3. display the current year, followed by the third quarter months, and the same for the next two years, as shown
 # 
@@ -28,4 +34,17 @@ provinces = {
 #
 # there are many different ways you could do this, but you will need to nest one loop inside another.
 # for this exercise, do not use the .each method in either loop
+third_quarter = months[6..8]
 
+# use a range from 2012-2014 and loop over it
+(2012..2014).each do |year|
+	print "#{year}: "
+
+	#loop over each 3rd quarter month
+	third_quarter.each do |month|
+		print "#{month} "
+	end
+
+	#print new line
+	print "\n"
+end
